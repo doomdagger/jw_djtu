@@ -1,10 +1,10 @@
 REQUIREMENTS="requirements-dev.txt"
-TAG="\n\n\033[0;32m\#\#\# "
-END=" \#\#\# \033[0m\n"
+TAG= **
+END= **
 
 all: init
 
-bower:
+bower: dependency
 	@echo $(TAG)bower install the components for the system$(TAG)
 	bower install
 	@echo
@@ -26,22 +26,22 @@ copy: bower clean
 	cp bower_components/validator-js/validator.js static/js/vendor/
 	@echo
 	
-cat: copy
+init: copy
 	@echo $(TAG)cat all the vendor js files into scripts.js$(TAG)
-	cat *.js >> scripts.js
-	cp bower_components/jquery/dist/jquery.js static/js/vendor/
-	uglifyjs scripts.js
-	uglifyjs jquery.js
+	cat static/js/vendor/*.js >> static/js/scripts.js
+	cp bower_components/jquery/dist/jquery.js static/js/
+	uglifyjs -o static/js/scripts.min.js static/js/scripts.js
+	uglifyjs -o static/js/jquery.min.js static/js/jquery.js
 	@echo
 
-init: cat
+dependency:
 	@echo $(TAG)init jw djtu$(TAG)
-	npm install -g bower
-	npm install -g uglify-js
 	@echo
 
 clean:
 	@echo $(TAG)Clean the vendor files$(TAG)
 	rm -f static/js/vendor/*.js
+	rm -f static/js/scripts*
+	rm -f static/js/jquery*
 	@echo
 

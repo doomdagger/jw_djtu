@@ -6,3 +6,14 @@ bower_components/
 
 # make file executable #
 make.exe
+
+# assets #
+static/css/
+!static/css/custom.css
+!static/css/README.md
+static/js/vendor/
+!static/js/vendor/README.md
+static/js/jquery*
+static/js/scripts*
+static/fonts/
+!static/fonts/README.md
