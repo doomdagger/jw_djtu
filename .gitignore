@@ -1,0 +1,8 @@
+# idea meta #
+.idea/
+
+# bower #
+bower_components/
+
+# make file executable #
+make.exe

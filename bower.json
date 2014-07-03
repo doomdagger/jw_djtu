@@ -1,0 +1,19 @@
+{
+    "name": "jw_djtu",
+    "description": "college educational system for students",
+    "version": "1.0.0",
+    "dependencies": {
+        "backbone": "1.1.2",
+        "Countable": "2.0.2",
+        "jquery": "1.11.0",
+        "jquery-file-upload": "9.5.6",
+        "keymaster": "madrobby/keymaster#0f09fc1b7e66c2b7e07afe89a419366dcf2d1cd8",
+        "lodash": "2.4.1",
+        "moment": "2.4.0",
+        "nprogress": "0.1.6",
+        "validator-js": "3.4.0",
+        "loader.js": "stefanpenner/loader.js#1.0.0",
+        "bootstrap": "3.2.0",
+        "fontawesome": "4.1.0"
+    }
+}
