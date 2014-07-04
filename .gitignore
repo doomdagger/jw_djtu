@@ -17,3 +17,9 @@ static/js/jquery*
 static/js/scripts*
 static/fonts/
 !static/fonts/README.md
+
+# python cache #
+*__pycache__*
+
+# default db file #
+db.sqlite3
