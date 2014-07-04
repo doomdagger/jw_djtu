@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,8 @@
     <link rel="icon" href="{% static "images/favicon.ico" %}">
 
     <title>大连交通大学教务在线</title>
+    <link href="{% static "css/font-awesome.css" %}" rel="stylesheet">
+    <link href="{% static "css/nprogress.css" %}" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
@@ -22,218 +24,213 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">大连交通大学教务在线</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><i class="fa fa-mortar-board fa-lg"></i> 综合教务管理系统</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a href="#">主页</a></li>
-            <li><a href="#">课表</a></li>
-            <li><a href="#">成绩</a></li>
-            <li><a href="#">个人信息</a></li>
-            <li><a href="#">退出登录</a></li>
-          </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#"><i class="fa fa-home fa-lg"></i> 首页</a></li>
+                <li><a href="#"><i class="fa fa-sign-out fa-lg"></i> 退出</a></li>
+                <li><a href="#"><i class="fa fa-child fa-lg"></i> 我的信息</a></li>
+                <li><a href="#"><i class="fa fa-key fa-lg"></i> 修改密码</a></li>
+                <li><a href="#"><i class="fa fa-inbox fa-lg"></i> 教务运行公告</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-delicious fa-lg"></i> 学生空间<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><i class="fa fa-building fa-lg"></i> 教室查询</a></li>
+                        <li><a href="#"><i class="fa fa-table fa-lg"></i> 本学期课表查询</a></li>
+                        <li><a href="#"><i class="fa fa-book fa-lg"></i> 学生选课</a></li>
+                        <li><a href="#">重修重考报名</a></li>
+                        <li><a href="#">学生考试安排</a></li>
+                        <li><a href="#">课程成绩</a></li>
+                        <li><a href="#">等级考试成绩</a></li>
+                        <li><a href="#">评估课程</a></li>
+                        <li><a href="#">教学评价</a></li>
+                        <li><a href="#">个人教学计划</a></li>
+                        <li><a href="#">等级考试报名</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="navbar-text navbar-right">您好！<a href="#" class="navbar-link">李赫</a>（1018110323），欢迎登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
-      </div>
     </div>
+</div>
 
-    <div class="container-fluid">
-      <div class="row">
+<div class="container-fluid">
+    <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <span class="text-primary">2014年07月04日 周五</span>
+                </div>
+                <div class="panel-footer">
+                    2014年春 第<span class="text-danger"> 18 </span>周
+                </div>
+            </div>
+            <ul class="nav nav-sidebar">
+                <li><a href="#">修改密码</a></li>
+                <li><a href="#">教室查询</a></li>
+                <li><a href="#">学籍信息</a></li>
+                <li><a href="#">本学期课表查询</a></li>
+                <li><a href="#">学生选课</a></li>
+                <li><a href="#">重修重考报名</a></li>
+                <li><a href="#">学生考试安排</a></li>
+                <li>
+                    <a type="button" data-toggle="collapse" data-target="#demo">
+                        个人成绩查询
+                    </a>
+                    <ul id="demo" class="list-group collapse out">
+                        <li class="list-group-item"><a class="btn btn-block" href="#">课程成绩</a></li>
+                        <li class="list-group-item"><a class="btn btn-block" href="#">等级考试成绩</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">评估课程</a></li>
+                <li><a href="#">教学评价</a></li>
+                <li><a href="#">个人教学计划</a></li>
+                <li><a href="#">等级考试报名</a></li>
+            </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">教学运行公告</h1>
 
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+            <div class="row table-responsive">
+                <table class="table table-condensed">
+                    <tr class="info">
+                        <td><a class="btn btn-sm btn-info">1</a></td>
+                        <td><a class="btn btn-sm btn-info">2</a></td>
+                        <td><a class="btn btn-sm btn-info">3</a></td>
+                        <td><a class="btn btn-sm btn-info">4</a></td>
+                        <td><a class="btn btn-sm btn-info">5</a></td>
+                        <td><a class="btn btn-sm btn-info">6</a></td>
+                        <td><a class="btn btn-sm btn-info">7</a></td>
+                        <td><a class="btn btn-sm btn-info">8</a></td>
+                        <td><a class="btn btn-sm btn-info">9</a></td>
+                        <td><a class="btn btn-sm btn-info">10</a></td>
+                        <td><a class="btn btn-sm btn-info">11</a></td>
+                        <td><a class="btn btn-sm btn-info">12</a></td>
+                        <td><a class="btn btn-sm btn-info">13</a></td>
+                        <td><a class="btn btn-sm btn-info">14</a></td>
+                        <td><a class="btn btn-sm btn-info">15</a></td>
+                        <td><a class="btn btn-sm btn-info">16</a></td>
+                        <td><a class="btn btn-sm btn-info">17</a></td>
+                        <td><a class="btn btn-sm btn-info">18</a></td>
+                        <td><a class="btn btn-sm btn-info">19</a></td>
+                        <td><a class="btn btn-sm btn-info">20</a></td>
+                    </tr>
+                </table>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
 
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <div class="row">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    会计从业资格考前培训 ----迈向会计的第一步
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse out">
+                            <div class="panel-body">
+                                亲爱的同学：
+                                大连交通大学经济管理学院现诚挚向您发出邀请！我们本着为同学真诚服务的态度，积极与大连市会计服务中心财会培训学校（隶属于大连市财政局）取得联系并合力举办会计从业资格考前培训班。
+                                你想一毕业就当会计吗？你想以会计成就人生吗？那就从这里开始吧。在校期间考取会计从业资格证书是有志从事会计工作的大学生毕业从事会计工作必不可少的条件之一。应广大学生要求，我院特别提供会计从业资格证的考前培训，由长期从事会计从业资格考前培训的专职教师授课，具体事宜如下：
+
+                                一、培训对象： 大连交通大学在校生
+
+                                二、课程设置及收费：
+                                培训课程 培训内容 培训时间 收费
+
+                                会计基础理论 基础会计 两个月 三科780元
+                                （含三科教材费和30元/科考试软件练习费）
+
+                                初级会计电算化 计算机基础知识，会计软件（操作系统、办公软件、网络知识） 一个半月
+
+                                财经法规与职业道德 一个月
+
+                                三、考试形式：参加大连市财政局无纸化考试，每季度考一次，三科须一次性通过有效。
+
+                                四、培训形式：统一授课，考前免费上机练习；一次不过、免费再学。
+
+                                五、上课地点：大连交通大学本部校区、旅顺校区。咨询电话：86226635 QQ群：310987641
+
+                                六、报名及培训时间：每年3月，9月开课。报名地点在二号楼625（本部校区），教学楼716（旅顺校区）。学费由大连交通大学经济管理学院代收。
+
+                                七、学校网址http://www.dlkjfw.com（实名：大连市会计服务中心）
+
+
+                                大连交通大学经济管理学院
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    Collapsible Group Item #2
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    Collapsible Group Item #3
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{% static "js/jquery.js" %}"></script>
-    <script src="{% static "js/scripts.js" %}"></script>
-    <script src="{% static "js/doc.min.js" %}"></script>
-  </body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/vendor/bootstrap.js" %}"></script>
+<script src="{% static "js/vendor/backbone.js" %}"></script>
+<script src="{% static "js/vendor/nprogress.js" %}"></script>
+<script src="{% static "js/doc.min.js" %}"></script>
+<script>
+    NProgress.start();
+</script>
+</body>
 </html>
