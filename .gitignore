@@ -9,7 +9,7 @@ make.exe
 
 # assets #
 static/css/
-!static/css/custom.css
+!static/css/dashboard.css
 !static/css/README.md
 static/js/vendor/
 !static/js/vendor/README.md
@@ -23,3 +23,6 @@ static/fonts/
 
 # default db file #
 db.sqlite3
+
+# local config #
+settings/local.py
