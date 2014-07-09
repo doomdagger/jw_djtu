@@ -37,17 +37,17 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'common',
-    'students',
-    'teachers'
+    'teachers',
+    'students'
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'jw_djtu.middleware.UserAuthMiddleware'
 )
 
 ROOT_URLCONF = 'jw_djtu.urls'
@@ -81,6 +81,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),

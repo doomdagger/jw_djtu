@@ -1,0 +1,116 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static "images/favicon.ico" %}">
+
+    <title>大连交通大学教务在线</title>
+    <link href="{% static "css/font-awesome.css" %}" rel="stylesheet">
+    <link href="{% static "css/nprogress.css" %}" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #eee;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <form action="/dosignin/" method="POST" class="form-signin" role="form">
+        {% if message != '' %}
+            <div class="alert alert-{% if message_type == 0 %}info{% elif message_type == 1 %}warning{% elif message_type == 2 %}danger{% endif %} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <strong>{{ message }}</strong>
+            </div>
+        {% endif %}
+        <h2 class="form-signin-heading">请登录</h2>
+        <input name="username" type="text" class="form-control" placeholder="学号" required autofocus>
+        <input name="password" type="password" class="form-control" placeholder="密码" required>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> 记住我
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+
+</div>
+<!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/vendor/bootstrap.js" %}"></script>
+<script src="{% static "js/vendor/backbone.js" %}"></script>
+<script src="{% static "js/vendor/nprogress.js" %}"></script>
+<script src="{% static "js/doc.min.js" %}"></script>
+<script>
+    NProgress.done(true);
+</script>
+</body>
+</html>
