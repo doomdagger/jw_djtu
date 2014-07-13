@@ -12,9 +12,9 @@ function jw_get(url, data) {
     setTimeout(function () {
         $.get(url, data).
         done(function (page) {
-            main.fadeOut(500, function () {
+            main.fadeOut(250, function () {
                 main.html(page);
-                main.fadeIn(300);
+                main.fadeIn(250);
             });
         }).
         fail(function () {
@@ -23,12 +23,21 @@ function jw_get(url, data) {
         always(function () {
             NProgress.done();
         });
-    },1500);
+    },500);
 
 }
 
 $('a[data-url]').click(function(event){
     event.preventDefault();
+
+    if($(this).parent('li').hasClass('active'))
+        return;
+
+    var active = $('.active');
+
+    active.removeClass('active');
+
+    $(this).parent('li').addClass('active');
 
     jw_get($(this).attr('data-url'));
 

@@ -1,0 +1,68 @@
+<h1 class="page-header">{{ year }} {% if term == "1" %}春{% else %}秋{% endif %} 课程安排</h1>
+
+<div class="row">
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">学年</div>
+                <select id="school_year" class="form-control">
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+                    <option>2009</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">学期</div>
+                <select id="school_term" class="form-control">
+                    <option value="1">春</option>
+                    <option value="2">秋</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">查询</button>
+    </form>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-condensed table-striped table-hover">
+            <tr>
+                <th>课程号</th>
+                <th>课程序号</th>
+                <th>课程名称</th>
+                <th>任课教师</th>
+                <th>学分</th>
+                <th>选课属性</th>
+                <th>考核方式</th>
+                <th>考试性质</th>
+                <th>是否缓考</th>
+                <th>上课时间、地点</th>
+            </tr>
+            {% for course in courses %}
+                <tr>
+                    <td>{{ course.course_id }}</td>
+                    <td>{{ course.course_seq }}</td>
+                    <td>{{ course.course_name }}</td>
+                    <td>{{ course.teacher }}</td>
+                    <td>{{ course.course_mark }}</td>
+                    <td>{{ course.course_attr }}</td>
+                    <td>{{ course.examine_manner }}</td>
+                    <td>{{ course.exam_prop }}</td>
+                    <td>{% if course.is_postponed  %}缓考{% else %}非缓考{% endif %}</td>
+                    <td>
+                        {% for room_taken in course.room_takens %}
+                            <p><span class="text-primary">{{ room_taken.start_week }}-{{ room_taken.end_week }}周&nbsp;&nbsp; 周{{ room_taken.week_day }}&nbsp;&nbsp; {{ room_taken.start_section }}-{{ room_taken.end_section }}节&nbsp;&nbsp; {{ room_taken.room_name }}</span></p>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

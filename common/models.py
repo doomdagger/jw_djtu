@@ -26,22 +26,12 @@ class Room(models.Model):
 
 class Course(models.Model):
     course_id = models.CharField(max_length=25, null=False, blank=False)
-    course_seq = models.CharField(max_length=5, null=False, blank=False)
     course_name = models.CharField(max_length=50, null=False, blank=False)
     course_mark = models.DecimalField(max_digits=5, decimal_places=2)
     course_attr = models.CharField(max_length=20, null=False, blank=False, choices=(
         ('cmp', '必修'),
         ('limit', '限选'),
         ('opt', '任选')
-    ))
-    examine_manner = models.CharField(max_length=20, null=False, blank=False, choices=(
-        ('uncertain', '未确定'),
-        ('certain', '确定')
-    ))
-    exam_prop = models.CharField(max_length=20, null=False, blank=False, choices=(
-        ('normal', "正常考试"),
-        ('postponed', "补缓考试"),
-        ('recap', "重修考试")
     ))
 
     def __str__(self):
@@ -51,13 +41,29 @@ class Course(models.Model):
 class CourseInstance(models.Model):
     course = models.ForeignKey('Course')
     teacher = models.ForeignKey('Teacher')
+    course_seq = models.CharField(max_length=5, null=False, blank=False)
     is_postponed = models.BooleanField(null=False)
     school_year = models.PositiveIntegerField(null=False)
+    examine_manner = models.CharField(max_length=20, null=False, blank=False, choices=(
+        ('uncertain', '未确定'),
+        ('certain', '确定')
+    ))
+    exam_prop = models.CharField(max_length=20, null=False, blank=False, choices=(
+        ('normal', "正常考试"),
+        ('postponed', "补缓考试"),
+        ('recap', "重修考试")
+    ))
     school_term = models.PositiveIntegerField(null=False, choices=(
         (1, '春'),
         (2, '秋')
     ))
     has_room = models.BooleanField()
+    exam_date = models.DateTimeField(null=True)
+    exam_last_minutes = models.PositiveIntegerField(null=True)
+    exam_room = models.ForeignKey('Room', null=True)
+
+    def __str__(self):
+        return self.course.course_name + ":" + self.teacher.full_name
 
 
 class RoomTaken(models.Model):
@@ -68,6 +74,9 @@ class RoomTaken(models.Model):
     week_day = models.PositiveIntegerField()
     start_section = models.PositiveIntegerField()
     end_section = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.course_instance.course.course_name + ":" + self.room.room_name
 
 
 class Teacher(models.Model):
@@ -108,15 +117,22 @@ class AwardRecord(models.Model):
     award_name = models.CharField(max_length=100)
     award_remark = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.award_name
+
 
 class StudentCourse(models.Model):
     course_instance = models.ForeignKey('CourseInstance')
     student = models.ForeignKey('Student')
-    normal_score = models.FloatField()
-    final_score = models.FloatField()
-    eval_score = models.FloatField()
+    is_score_out = models.BooleanField()
+    normal_score = models.FloatField(null=True)
+    final_score = models.FloatField(null=True)
+    eval_score = models.FloatField(null=True)
     is_postponed = models.BooleanField()
-    remark = models.CharField(max_length=100)
+    remark = models.CharField(max_length=100, null=True, default="无")
+
+    def __str__(self):
+        return self.course_instance.course.course_name + ":" + self.student.real_name
 
 
 class Announcement(models.Model):
@@ -125,3 +141,13 @@ class Announcement(models.Model):
     end_week = models.PositiveIntegerField()
     title = models.CharField(max_length=50, null=False, blank=False)
 
+    def __str__(self):
+        return self.title
+
+
+class Setting(models.Model):
+    key = models.CharField(max_length=300, null=False, blank=False)
+    value = models.CharField(max_length=300, null=False, blank=False)
+
+    def __str__(self):
+        return self.key + ":" + self.value

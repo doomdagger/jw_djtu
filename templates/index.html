@@ -44,18 +44,18 @@
                 <li><a href=""><i class="fa fa-home fa-lg"></i> 首页</a></li>
                 <li><a href="/signout/"><i class="fa fa-sign-out fa-lg"></i> 退出</a></li>
                 <li><a href="#"><i class="fa fa-child fa-lg"></i> 我的信息</a></li>
-                <li><a href="#"><i class="fa fa-key fa-lg"></i> 修改密码</a></li>
-                <li><a href="#"><i class="fa fa-inbox fa-lg"></i> 教务运行公告</a></li>
+                <li><a href="#" data-url="/changepass/"><i class="fa fa-key fa-lg"></i> 修改密码</a></li>
+                <li><a href="#" data-url="/announcement/"><i class="fa fa-inbox fa-lg"></i> 教务运行公告</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-delicious fa-lg"></i>
                         学生空间<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><i class="fa fa-building fa-lg fa-fw"></i> &nbsp;教室查询</a></li>
-                        <li><a href="#"><i class="fa fa-table fa-lg fa-fw"></i> &nbsp;本学期课表查询</a></li>
+                        <li><a href="#" data-url="/queryroom/"><i class="fa fa-building fa-lg fa-fw"></i> &nbsp;教室查询</a></li>
+                        <li><a href="#" data-url="/querycourse/"><i class="fa fa-table fa-lg fa-fw"></i> &nbsp;本学期课表查询</a></li>
                         <li><a href="#"><i class="fa fa-book fa-lg fa-fw"></i> &nbsp;学生选课</a></li>
                         <li><a href="#"><i class="fa fa-circle-o-notch fa-lg fa-fw"></i> &nbsp;重修重考报名</a></li>
                         <li><a href="#"><i class="fa fa-institution fa-lg fa-fw"></i> &nbsp;学生考试安排</a></li>
-                        <li><a href="#"><i class="fa fa-check fa-lg fa-fw"></i> &nbsp;课程成绩</a></li>
+                        <li><a href="#" data-url="/queryscore/"><i class="fa fa-check fa-lg fa-fw"></i> &nbsp;课程成绩</a></li>
                         <li><a href="#"><i class="fa fa-check-circle fa-lg fa-fw"></i> &nbsp;等级考试成绩</a></li>
                         <li><a href="#"><i class="fa fa-comment fa-lg fa-fw"></i> &nbsp;评估课程</a></li>
                         <li><a href="#"><i class="fa fa-list fa-lg fa-fw"></i> &nbsp;个人教学计划</a></li>
@@ -81,10 +81,10 @@
                 </div>
             </div>
             <ul class="nav nav-sidebar">
-                <li><a href="#" data-url="/announcement/">修改密码</a></li>
-                <li><a href="#" data-url="/announcement/">教室查询</a></li>
+                <li><a href="#" data-url="/changepass/">修改密码</a></li>
+                <li><a href="#" data-url="/queryroom/">教室查询</a></li>
                 <li><a href="#" data-url="/announcement/">学籍信息</a></li>
-                <li><a href="#" data-url="/announcement/">本学期课表查询</a></li>
+                <li><a href="#" data-url="/querycourse/">本学期课表查询</a></li>
                 <li><a href="#" data-url="/announcement/">学生选课</a></li>
                 <li><a href="#" data-url="/announcement/">重修重考报名</a></li>
                 <li><a href="#" data-url="/announcement/">学生考试安排</a></li>
@@ -93,7 +93,7 @@
                         个人成绩查询
                     </a>
                     <ul id="demo" class="list-group collapse out">
-                        <li class="list-group-item"><a class="btn btn-block" href="#">课程成绩</a></li>
+                        <li class="list-group-item"><a class="btn btn-block" href="#" data-url=/queryscore/">课程成绩</a></li>
                         <li class="list-group-item"><a class="btn btn-block" href="#">等级考试成绩</a></li>
                     </ul>
                 </li>
